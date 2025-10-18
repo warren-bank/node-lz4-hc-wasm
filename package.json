@@ -1,0 +1,32 @@
+{
+  "name": "@warren-bank/lz4-hc-wasm",
+  "version": "1.0.0",
+  "description": "LZ4 block format encoder/decoder: a WebAssembly implementation with variable high compression.",
+  "license": "BSD-3-Clause",
+  "exports": {
+    ".": {
+      "browser": "./dist/web/lz4.js",
+      "import":  "./dist/esm/lz4.mjs",
+      "require": "./dist/cjs/lz4.cjs"
+    }
+  },
+  "files": [
+    "dist/"
+  ],
+  "author": {
+    "name": "Warren R. Bank",
+    "email": "warren.r.bank@gmail.com",
+    "url": "https://github.com/warren-bank"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/warren-bank/node-lz4-hc-wasm"
+  },
+  "keywords": [
+    "lz4",
+    "hc",
+    "variable",
+    "high",
+    "compression"
+  ]
+}

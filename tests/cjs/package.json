@@ -1,0 +1,8 @@
+{
+  "name": "test",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "test": "node test.js > test.log 2>&1"
+  }
+}

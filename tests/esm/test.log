@@ -1,0 +1,147 @@
+lz4.compressBlockBound = function
+lz4.uncompressBlock = function
+lz4.uncompressBlockWithDict = function
+lz4.compressBlock = function
+lz4.compressBlockHC = function
+----------------------------------------
+json = {
+  "name": "@warren-bank/lz4-hc-wasm",
+  "version": "1.0.0",
+  "description": "LZ4 block format encoder/decoder: a WebAssembly implementation with variable high compression.",
+  "license": "BSD-3-Clause",
+  "exports": {
+    ".": {
+      "browser": "./dist/web/lz4.js",
+      "import":  "./dist/esm/lz4.mjs",
+      "require": "./dist/cjs/lz4.cjs"
+    }
+  },
+  "files": [
+    "dist/"
+  ],
+  "author": {
+    "name": "Warren R. Bank",
+    "email": "warren.r.bank@gmail.com",
+    "url": "https://github.com/warren-bank"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/warren-bank/node-lz4-hc-wasm"
+  },
+  "keywords": [
+    "lz4",
+    "hc",
+    "variable",
+    "high",
+    "compression"
+  ]
+}
+----------------------------------------
+lz4.compressBlock => Uint8Array with 559 bytes
+lz4.uncompressBlock => Uint8Array with 745 bytes
+after compression and decompression, json is the same
+----------------------------------------
+lz4.compressBlockHC(compressionLevel=0) => Uint8Array with 508 bytes
+lz4.uncompressBlock => Uint8Array with 745 bytes
+after compression and decompression, json is the same
+----------------------------------------
+lz4.compressBlockHC(compressionLevel=1) => Uint8Array with 519 bytes
+lz4.uncompressBlock => Uint8Array with 745 bytes
+after compression and decompression, json is the same
+----------------------------------------
+lz4.compressBlockHC(compressionLevel=2) => Uint8Array with 516 bytes
+lz4.uncompressBlock => Uint8Array with 745 bytes
+after compression and decompression, json is the same
+----------------------------------------
+lz4.compressBlockHC(compressionLevel=3) => Uint8Array with 512 bytes
+lz4.uncompressBlock => Uint8Array with 745 bytes
+after compression and decompression, json is the same
+----------------------------------------
+lz4.compressBlockHC(compressionLevel=4) => Uint8Array with 509 bytes
+lz4.uncompressBlock => Uint8Array with 745 bytes
+after compression and decompression, json is the same
+----------------------------------------
+lz4.compressBlockHC(compressionLevel=5) => Uint8Array with 509 bytes
+lz4.uncompressBlock => Uint8Array with 745 bytes
+after compression and decompression, json is the same
+----------------------------------------
+lz4.compressBlockHC(compressionLevel=6) => Uint8Array with 509 bytes
+lz4.uncompressBlock => Uint8Array with 745 bytes
+after compression and decompression, json is the same
+----------------------------------------
+lz4.compressBlockHC(compressionLevel=7) => Uint8Array with 508 bytes
+lz4.uncompressBlock => Uint8Array with 745 bytes
+after compression and decompression, json is the same
+----------------------------------------
+lz4.compressBlockHC(compressionLevel=8) => Uint8Array with 508 bytes
+lz4.uncompressBlock => Uint8Array with 745 bytes
+after compression and decompression, json is the same
+----------------------------------------
+lz4.compressBlockHC(compressionLevel=9) => Uint8Array with 508 bytes
+lz4.uncompressBlock => Uint8Array with 745 bytes
+after compression and decompression, json is the same
+----------------------------------------
+lz4.compressBlockHC(compressionLevel=10) => Uint8Array with 508 bytes
+lz4.uncompressBlock => Uint8Array with 745 bytes
+after compression and decompression, json is the same
+----------------------------------------
+lz4.compressBlockHC(compressionLevel=11) => Uint8Array with 508 bytes
+lz4.uncompressBlock => Uint8Array with 745 bytes
+after compression and decompression, json is the same
+----------------------------------------
+lz4.compressBlockHC(compressionLevel=12) => Uint8Array with 508 bytes
+lz4.uncompressBlock => Uint8Array with 745 bytes
+after compression and decompression, json is the same
+----------------------------------------
+lz4.compressBlockHC(compressionLevel=13) => Uint8Array with 508 bytes
+lz4.uncompressBlock => Uint8Array with 745 bytes
+after compression and decompression, json is the same
+----------------------------------------
+lz4.compressBlockHC(compressionLevel=14) => Uint8Array with 508 bytes
+lz4.uncompressBlock => Uint8Array with 745 bytes
+after compression and decompression, json is the same
+----------------------------------------
+lz4.compressBlockHC(compressionLevel=15) => Uint8Array with 508 bytes
+lz4.uncompressBlock => Uint8Array with 745 bytes
+after compression and decompression, json is the same
+----------------------------------------
+lz4.compressBlockHC(compressionLevel=16) => Uint8Array with 508 bytes
+lz4.uncompressBlock => Uint8Array with 745 bytes
+after compression and decompression, json is the same
+----------------------------------------
+lz4.compressBlockHC(compressionLevel=17) => Uint8Array with 508 bytes
+lz4.uncompressBlock => Uint8Array with 745 bytes
+after compression and decompression, json is the same
+----------------------------------------
+lz4.compressBlockHC(compressionLevel=18) => Uint8Array with 508 bytes
+lz4.uncompressBlock => Uint8Array with 745 bytes
+after compression and decompression, json is the same
+----------------------------------------
+lz4.compressBlockHC(compressionLevel=19) => Uint8Array with 508 bytes
+lz4.uncompressBlock => Uint8Array with 745 bytes
+after compression and decompression, json is the same
+----------------------------------------
+lz4.compressBlockHC(compressionLevel=20) => Uint8Array with 508 bytes
+lz4.uncompressBlock => Uint8Array with 745 bytes
+after compression and decompression, json is the same
+----------------------------------------
+lz4.compressBlockHC(compressionLevel=21) => Uint8Array with 508 bytes
+lz4.uncompressBlock => Uint8Array with 745 bytes
+after compression and decompression, json is the same
+----------------------------------------
+lz4.compressBlockHC(compressionLevel=22) => Uint8Array with 508 bytes
+lz4.uncompressBlock => Uint8Array with 745 bytes
+after compression and decompression, json is the same
+----------------------------------------
+lz4.compressBlockHC(compressionLevel=23) => Uint8Array with 508 bytes
+lz4.uncompressBlock => Uint8Array with 745 bytes
+after compression and decompression, json is the same
+----------------------------------------
+lz4.compressBlockHC(compressionLevel=24) => Uint8Array with 508 bytes
+lz4.uncompressBlock => Uint8Array with 745 bytes
+after compression and decompression, json is the same
+----------------------------------------
+lz4.compressBlockHC(compressionLevel=25) => Uint8Array with 508 bytes
+lz4.uncompressBlock => Uint8Array with 745 bytes
+after compression and decompression, json is the same
+----------------------------------------
