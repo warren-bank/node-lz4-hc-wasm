@@ -103,9 +103,31 @@ func compressBlockHC(this js.Value, args []js.Value) interface{} {
     js.Global().Get("console").Call("error", "compressBlockHC() called incorrectly. parameter #2 (depth): requires Integer")
     return nil
   }
-  depthNumber := lz4.CompressionLevel(
-    utils.ReadJsUint32(args[1]),
-  )
+  var level lz4.CompressionLevel
+  switch utils.ReadJsInt(args[1]) {
+  case 0:
+    level = lz4.Fast
+  case 1:
+    level = lz4.Level1
+  case 2:
+    level = lz4.Level2
+  case 3:
+    level = lz4.Level3
+  case 4:
+    level = lz4.Level4
+  case 5:
+    level = lz4.Level5
+  case 6:
+    level = lz4.Level6
+  case 7:
+    level = lz4.Level7
+  case 8:
+    level = lz4.Level8
+  case 9:
+    level = lz4.Level9
+  default:
+    level = lz4.Level9
+  }
 
   var dstSize int
   if len(args) < 3 || !utils.ValidateJsNumber(args[2]) {
@@ -116,7 +138,7 @@ func compressBlockHC(this js.Value, args []js.Value) interface{} {
   dstBytes := make([]byte, dstSize)
 
   // resolve to Uint8Array, or reject Error
-  n, err := lz4.CompressBlockHC(srcBytes, dstBytes, depthNumber, nil, nil)
+  n, err := lz4.CompressBlockHC(srcBytes, dstBytes, level, nil, nil)
   return utils.ReturnJsUint8ArrayAsPromise(dstBytes, n, err)
 }
 

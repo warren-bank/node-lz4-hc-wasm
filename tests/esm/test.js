@@ -30,22 +30,6 @@ const run_tests = async () => {
   await test_04(data, 7); print_test_sep()
   await test_04(data, 8); print_test_sep()
   await test_04(data, 9); print_test_sep()
-  await test_04(data, 10); print_test_sep()
-  await test_04(data, 11); print_test_sep()
-  await test_04(data, 12); print_test_sep()
-  await test_04(data, 13); print_test_sep()
-  await test_04(data, 14); print_test_sep()
-  await test_04(data, 15); print_test_sep()
-  await test_04(data, 16); print_test_sep()
-  await test_04(data, 17); print_test_sep()
-  await test_04(data, 18); print_test_sep()
-  await test_04(data, 19); print_test_sep()
-  await test_04(data, 20); print_test_sep()
-  await test_04(data, 21); print_test_sep()
-  await test_04(data, 22); print_test_sep()
-  await test_04(data, 23); print_test_sep()
-  await test_04(data, 24); print_test_sep()
-  await test_04(data, 25); print_test_sep()
 }
 
 const print_test_sep = () => {

@@ -1,6 +1,6 @@
 {
   "name": "@warren-bank/lz4-hc-wasm",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "LZ4 block format encoder/decoder: a WebAssembly implementation with variable high compression.",
   "license": "BSD-3-Clause",
   "exports": {
