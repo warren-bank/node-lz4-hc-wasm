@@ -45,7 +45,9 @@ func ReturnJsUint8ArrayAsPromise(dst []byte, n int, err error) (js.Value) {
   if err != nil {
     return ReturnAsPromise(nil, err)
   } else {
-    dst = dst[:n]
+    if n >=0 && n < len(dst) {
+      dst = dst[:n]
+    }
     jsBytes := WriteJsBytes(dst)
     return ReturnAsPromise(jsBytes, nil)
   }

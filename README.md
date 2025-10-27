@@ -45,17 +45,13 @@ common:
 #### JavaScript API
 
 ```js
-  type lz4.compressBlockBound      = (n: int) => int
-  type lz4.uncompressBlock         = (src: Uint8Array, dstSize?: int) => Promise<Uint8Array>
-  type lz4.uncompressBlockWithDict = (src: Uint8Array, dict: Uint8Array, dstSize?: int) => Promise<Uint8Array>
-  type lz4.compressBlock           = (src: Uint8Array, dstSize?: int) => Promise<Uint8Array>
-  type lz4.compressBlockHC         = (src: Uint8Array, depth: int, dstSize?: int) => Promise<Uint8Array>
+  type lz4.uncompressBlock         = (src: Uint8Array) => Promise<Uint8Array>
+  type lz4.uncompressBlockWithDict = (src: Uint8Array, dict: Uint8Array) => Promise<Uint8Array>
+  type lz4.compressBlock           = (src: Uint8Array) => Promise<Uint8Array>
+  type lz4.compressBlockHC         = (src: Uint8Array, depth?: int) => Promise<Uint8Array>
 ```
 
 where:
-* the following details are low-level and can generally be ignored:
-  - the function: `lz4.compressBlockBound`
-  - the parameter: `dstSize?: int`
 * `Promise<Uint8Array>` means that a Promise is returned, which will either:
   - resolve to an `Uint8Array`
   - reject if any error occurs

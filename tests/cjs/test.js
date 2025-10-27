@@ -35,7 +35,6 @@ const print_test_sep = () => {
 const test_01 = async (data) => {
   const {lz4, json} = data
 
-  console.log('lz4.compressBlockBound =',      typeof lz4.compressBlockBound)
   console.log('lz4.uncompressBlock =',         typeof lz4.uncompressBlock)
   console.log('lz4.uncompressBlockWithDict =', typeof lz4.uncompressBlockWithDict)
   console.log('lz4.compressBlock =',           typeof lz4.compressBlock)
