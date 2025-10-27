@@ -1,6 +1,6 @@
-### [lz4-hc-wasm](https://github.com/warren-bank/node-lz4-hc-wasm)
+### [lz4-hc-wasm](https://github.com/warren-bank/wasm-lz4-hc)
 
-LZ4 block format encoder/decoder: a WebAssembly implementation with variable high compression.
+WebAssembly implementation for LZ4 high compression encoder and decoder with support for both frame-level and block-level data formats.
 
 #### Credits
 
@@ -45,19 +45,46 @@ common:
 #### JavaScript API
 
 ```js
-  type lz4.uncompressBlock         = (src: Uint8Array) => Promise<Uint8Array>
-  type lz4.uncompressBlockWithDict = (src: Uint8Array, dict: Uint8Array) => Promise<Uint8Array>
-  type lz4.compressBlock           = (src: Uint8Array) => Promise<Uint8Array>
-  type lz4.compressBlockHC         = (src: Uint8Array, depth?: int) => Promise<Uint8Array>
+  // frame-level data format
+  type lz4.compressFrame           = (src: Uint8Array, depth?: int) => Promise<Uint8Array>
+  type lz4.uncompressFrame         = (src: Uint8Array) => Promise<Uint8Array>
+
+  // block-level data format
+  type lz4.compressBlockBound      = (n: int) => int
+  type lz4.compressBlock           = (src: Uint8Array, dstSize?: int) => Promise<Uint8Array>
+  type lz4.compressBlockHC         = (src: Uint8Array, depth: int, dstSize?: int) => Promise<Uint8Array>
+  type lz4.uncompressBlock         = (src: Uint8Array, dstSize?: int) => Promise<Uint8Array>
+  type lz4.uncompressBlockWithDict = (src: Uint8Array, dict: Uint8Array, dstSize?: int) => Promise<Uint8Array>
 ```
 
 where:
+
+* [frame-level data format](https://github.com/lz4/lz4/blob/dev/doc/lz4_Frame_format.md) includes:
+  - a header
+    * magic number
+    * descriptor fields
+  - a sequence of blocks of compressed data
+  - a footer
+    * end mark
+    * checksum
+* block-level data format includes:
+  - a single block of compressed data
 * `Promise<Uint8Array>` means that a Promise is returned, which will either:
   - resolve to an `Uint8Array`
   - reject if any error occurs
+* the following block-level details are low-level and can generally be ignored:
+  - the function: `lz4.compressBlockBound`
+  - the parameter: `dstSize?: int`
+* the `depth` parameter is used to control the level of compression
+  - its value can range: `0` to `9`
+  - for frame-level compression, this value defaults to `0`
+    * `lz4.compressBlock` is used when this value is equal to `0`
+    * `lz4.compressBlockHC` is used when this value is greater than `0`
+  - for block-level high compression, this is a required value
+    * note that in this case, `lz4.compressBlock` is _not_ used when this value is equal to `0`
 
 notes:
-* test [results](./tests/cjs/test.log) confirm [this open issue](https://github.com/pierrec/lz4/issues/219),<br>which is that the `depth` compression-level parameter to `compressBlockHC` has (almost) no effect
+* test [results](./tests/cjs/test.log) confirm [this open issue](https://github.com/pierrec/lz4/issues/219),<br>which is that the `depth` compression-level parameter to `compressBlockHC` has no effect
 
 #### To Do
 
